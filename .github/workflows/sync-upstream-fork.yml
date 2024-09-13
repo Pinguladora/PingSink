@@ -11,5 +11,6 @@ jobs:
     steps:
       - run: gh repo sync $REPOSITORY -b $BRANCH
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY: ${{ github.repository }}
           BRANCH: ${{ github.ref_name }}
